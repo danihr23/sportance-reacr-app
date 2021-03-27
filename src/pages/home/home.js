@@ -14,7 +14,7 @@ export default function Home() {
 
             <SignupButton/>
 
-            <p className="home-text"> Already have an account? Log in! </p>
+            <p className="home-text"> Already have an account? <a href="#">Log in!</a> </p>
             </div> 
             
           
