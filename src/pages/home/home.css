@@ -1,0 +1,26 @@
+.home{
+    height: 100vh; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: 'no-repeat';
+    text-align: center;
+
+    }
+.home img{
+    max-width: 250px;
+}
+
+.logo-text{
+    min-width: 632px; 
+    padding-top: 150px;
+}
+.home-nav img{
+
+    margin-bottom: 30px;
+}
+.home-text{
+    color:#F7D23C;
+    font-size: 18px;
+    margin-top: 15px;
+}
+

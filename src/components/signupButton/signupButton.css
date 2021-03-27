@@ -1,0 +1,12 @@
+.signupButton{
+    background-color: #F7D23C;
+    max-width: 250px;
+    text-align: center;
+    padding: 12px 16px;
+    border-radius: 11px;
+    color: #35456D;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    left: 620px;
+}
