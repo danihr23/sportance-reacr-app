@@ -1,0 +1,35 @@
+.sportanceSignup{
+  text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #35456D;
+    height: 100vh;
+    
+}
+.sigupForm{
+    box-shadow: 5px 10px 15px #888888;
+    position: relative;
+    top: 281px;
+    border-radius: 10px;
+    margin: 0px 571px;
+}
+.field input{
+    height: 50px;
+    width: 358px;
+    border: none;
+    border-bottom: 2px solid gray;
+    font-size: 15px;
+    border-radius: 7px;
+    
+    text-align: center;
+    background-color: #F7D23C;
+}
+button{
+    width: 357px;
+    height: 42px;
+    margin-top: 10px;
+    font-size: 15px;
+    border: none;
+    color: #F7D23C;
+    background: #17254E;
+}
