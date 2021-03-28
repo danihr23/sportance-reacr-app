@@ -1,6 +1,6 @@
 
 import firebase from "firebase"
-
+im
 
 
 const firebaseConfig = {
@@ -15,3 +15,5 @@ const firebaseConfig = {
    const db= firebaseApp.firestore();
    const auth = firebase.auth();
   const storage = firebase.storage();
+
+  export {db,auth,storage};
