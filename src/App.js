@@ -6,18 +6,20 @@ import SignupSportance from './pages/SignUpSportance/SignupSportance';
 import { UserContextProvider } from './context/user';
 
 
+
 function App() {
   return (
-    <UserContextProvider>
+  <UserContextProvider>
     <div className="App">
       <Switch>
       <Route path="/" exact component={Home} />
 
       <Route path="/stortance/signup" component={SignupSportance} />
       </Switch>
-    
+
+     
     </div>
-    </UserContextProvider> 
+    </UserContextProvider>
   );
 }
 
