@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import SignupSportance from './pages/SignUpSportance/SignupSportance';
 import { UserContextProvider } from './context/user';
 import LogIn from './pages/logIn/logIn'
-
+import LogInHome from'./pages/LogInHome/LogInHome';
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
       <Route path="/" exact component={Home} />
       <Route path= "/sportance/logIn" component={LogIn} />
       <Route path="/stortance/signup" component={SignupSportance} />
+      <Route path="/sportance/loginHome" component={LogInHome}/>
       </Switch>
 
      

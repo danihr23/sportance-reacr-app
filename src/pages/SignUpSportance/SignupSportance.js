@@ -9,7 +9,8 @@ import{UserContext}from '../../context/user'
 
 import "./SignupSportance.css"
 import { useHistory } from 'react-router';
-export default function SignupSportance(props) {
+
+export default function SignupSportance() {
 
     const [user, setUser] = useContext(UserContext).user;
     console.log(user);
@@ -24,7 +25,7 @@ export default function SignupSportance(props) {
             const password = e. target.password.value;
             const passConf = e.target.passwordConf.value;
         
-
+     
             console.log(email);
             console.log(password);
             console.log(passConf);
@@ -36,15 +37,16 @@ export default function SignupSportance(props) {
             auth.createUserWithEmailAndPassword(email,password)
             .then(res =>{
                 console.log(res.user)
-                let user = res.user;
-                setUser(user);
+               
+                
+                setUser(res.user);
             })
 
 
     }
 
     if(user){
-            history.push('/')    
+            history.push('/sportance/logIn')    
     }
 
     return (

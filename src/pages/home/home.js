@@ -1,10 +1,17 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { Link } from 'react-router-dom';
 import SignupButton from '../../components/signupButton/signupButton'
+import { UserContext } from '../../context/user';
+import { auth } from '../../firebase';
 
 import"./home.css";
 
 export default function Home() {
+
+    auth.onAuthStateChanged((user)=>{
+        console.log(user.uid);
+    })
+  
     return (
         <div className="home" style={{ 
             backgroundImage: `url("background.jpg")`}}>
