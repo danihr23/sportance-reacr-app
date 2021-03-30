@@ -5,10 +5,13 @@ import signupButton from '../../components/signupButton/signupButton';
 import { auth } from '../../firebase';
 
 import{UserContext}from '../../context/user'
-
+import Logo from './logo-text.png'
 
 import "./SignupSportance.css"
 import { useHistory } from 'react-router';
+import EmailIcon from '@material-ui/icons/Email';
+import LockOpenIcon from '@material-ui/icons/LockOpen';
+import VpnLockIcon from '@material-ui/icons/VpnLock';
 
 export default function SignupSportance() {
 
@@ -51,23 +54,34 @@ export default function SignupSportance() {
 
     return (
         <div className="sportanceSignup" >
+                <img  src={Logo} alt="Logo" />
+
 
                     <h1>Sing Up</h1>
-                   <img  src="logo512.png" alt="Logo" />
+                  
 
             <form className="sigupForm" onSubmit={SingUpSubmit}>
 
                 
 
                     <p className="field">
+                    <div className="icon">
+                    <EmailIcon/>
+                    </div>
                         <input type="email" id="email" name="email" placeholder="write your email" />
 
                     </p>
                     <p className="field">
+                    <div className="icon">
+                    <LockOpenIcon/>
+                    </div>
                         <input type="password" id="password" name="password" placeholder="write your password" />
 
                     </p>
                     <p className="field">
+                    <div className="icon">
+                    <VpnLockIcon/>
+                    </div>
                         <input type="password" id="passwordConf" name="passwordConf" placeholder="Confirm your password" />
 
                     </p>

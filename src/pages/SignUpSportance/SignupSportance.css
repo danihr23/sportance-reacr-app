@@ -6,6 +6,10 @@
     height: 100vh;
     
 }
+img{
+    width: 400px;
+    height: 80px;
+}
 .sigupForm{
     box-shadow: 5px 10px 15px #888888;
     position: relative;
@@ -35,8 +39,16 @@ button{
 }
 h1{
     font-size: 68px;
-    margin-top: 150px;
-    margin-bottom: -194px;
-    padding-bottom: -12px;
-    color: #F7D23C;
+      margin-top: 90px;
+      margin-bottom: -194px;
+      padding-bottom: -12px;
+      color: #F7D23C;
+}
+.field{
+    display: flex;
+}
+.icon{
+  position: relative;
+  top: 16px;
+  left: 29px;
 }

@@ -13,6 +13,19 @@
       border-radius: 10px;
       margin: 0px 571px;
   }
+  img{
+    width: 648px;
+    height: 141px;
+
+}
+  .field{
+      display: flex;
+  }
+  .icon{
+    position: relative;
+    top: 16px;
+    left: 29px;
+  }
   .field input{
       height: 50px;
       width: 358px;
@@ -35,7 +48,7 @@
   }
   h1{
       font-size: 68px;
-      margin-top: 150px;
+      margin-top: 90px;
       margin-bottom: -194px;
       padding-bottom: -12px;
       color: #F7D23C;

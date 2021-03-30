@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from 'react'
 import { auth } from '../firebase';
 import './nav.css'
+import Logo from './logo-text.png'
 export default function Nav() {
 
 const [email, setEmail] = useState('')
@@ -20,7 +21,11 @@ const [email, setEmail] = useState('')
     return (
         <div className="navigation">
 
-        <img src="logo-text.png" alt="logo" />
+        <img src={Logo} alt="logo" className="logo" />
+
+        <div className="welcome">
+        <p>Welome {email} in SPORTANCE</p>
+        </div>
 
         <article>
             <ul>
@@ -30,9 +35,7 @@ const [email, setEmail] = useState('')
                 <li>
                     <p>My Profile</p>
                 </li>
-                <li>
-                <p>Welome {email} in SPORTANCE</p>
-                </li>
+               
                 <li>
                     <p>Log Out</p>    
                 </li>

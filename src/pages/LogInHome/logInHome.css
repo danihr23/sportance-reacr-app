@@ -1,0 +1,39 @@
+.logInHome{
+    height: 100vh;
+    background-size: cover;
+    background-color: #35456D;
+}
+
+.category{
+    text-align: center;
+    margin: 100px;
+    padding: 30px;
+}
+.sport{
+    display: flex;
+    justify-content: space-around;
+    margin: 40px;
+
+}
+
+.sport div{
+    width: 150px;
+    height: 80px;
+    text-align: center;
+    font-size: 25px;
+    padding: 15px;
+    background-color:  #F7D23C;
+    border-radius: 4px;
+    box-shadow: 5px 10px 15px #888888;
+    padding-left: -10px;
+}
+.sport-icon{
+    border-bottom: 2px solid gray;
+    
+}
+.sport-one{
+    margin-left: 0px;
+}
+.sport-two{
+    margin-left: -203px;
+}
