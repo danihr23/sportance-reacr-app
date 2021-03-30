@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import SignupButton from '../../components/signupButton/signupButton'
 
 import"./home.css";
@@ -14,7 +15,7 @@ export default function Home() {
 
             <SignupButton/>
 
-            <p className="home-text"> Already have an account? <a href="#">Log in!</a> </p>
+            <p className="home-text"> Already have an account? <Link to="/sportance/logIn">Log in!</Link> </p>
             </div> 
             
           
