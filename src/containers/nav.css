@@ -1,10 +1,10 @@
 .navigation{
-    background-color: blue;
+    background-color: #F7D23C;;
     display: flex;
     justify-content: space-between;
     height: 80px;
     text-align: center;
-    color: wheat;
+    color: white;
 }
 ul{
     display: flex;
@@ -14,7 +14,7 @@ ul li{
     margin: 30px 25px;
     list-style: none;
     border-radius: 8px;
-  background-color: red;
+  background-color: #35456D;
   padding: 10px;
 }
 
