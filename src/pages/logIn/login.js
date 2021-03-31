@@ -1,5 +1,5 @@
-import React,{useContext} from 'react'
-import { useHistory } from 'react-router';
+import React,{useContext, useEffect} from 'react'
+import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../context/user';
 import { auth } from '../../firebase';
 import "./logIn.css"
@@ -18,15 +18,30 @@ export default function LogIn() {
 
             const email = e.target.email.value;
             const password = e.target.password.value;
-            console.log(email);
+            console.log(user.uid);
 
             auth.signInWithEmailAndPassword(email,password)
             .then(res=>{
-                console.log(res.user);
-                setUser(res.user);
-            })
-        }
+               // console.log(res.user);
 
+
+                
+               
+            })
+
+            
+        }
+       
+        useEffect(()=>{
+
+            auth.onAuthStateChanged((user)=>{
+                setUser(user);
+                if(user){
+                    history.push('/sportance/logInHome')
+                }
+            })
+
+        },[])
         
 
     return (

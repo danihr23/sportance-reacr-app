@@ -6,7 +6,7 @@ import SignupSportance from './pages/SignUpSportance/SignupSportance';
 import { UserContextProvider } from './context/user';
 import LogIn from './pages/logIn/logIn'
 import LogInHome from'./pages/LogInHome/LogInHome';
-
+import CreatePost from './pages/createPost/createPost'
 function App() {
   return (
   <UserContextProvider>
@@ -16,6 +16,7 @@ function App() {
       <Route path= "/sportance/logIn" component={LogIn} />
       <Route path="/stortance/signup" component={SignupSportance} />
       <Route path="/sportance/logInHome" component={LogInHome}/>
+      <Route path="/sportance/createPost" component={CreatePost}/>
       </Switch>
 
      

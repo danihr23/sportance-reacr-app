@@ -16,7 +16,7 @@ import VpnLockIcon from '@material-ui/icons/VpnLock';
 export default function SignupSportance() {
 
     const [user, setUser] = useContext(UserContext).user;
-    console.log(user);
+    //console.log(user);
     let history =useHistory();
 
     const  SingUpSubmit=(e)=>{ 
@@ -39,7 +39,7 @@ export default function SignupSportance() {
             
             auth.createUserWithEmailAndPassword(email,password)
             .then(res =>{
-                console.log(res.user)
+                //console.log(res.user)
                
                 
                 setUser(res.user);

@@ -8,7 +8,7 @@ import SportsTennisIcon from '@material-ui/icons/SportsTennis';
 import SportsFootballIcon from '@material-ui/icons/SportsFootball';
 import SportsIcon from '@material-ui/icons/Sports';
 import './logInHome.css'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 export default function LogInHome() {
     return (
@@ -19,14 +19,14 @@ export default function LogInHome() {
 
             <section className="category">
                 <article className="sport">
-                    <Link to="/sponrance/category/bassketball">
+                    <NavLink activeClassName='active' to="/sponrance/category/bassketball">
                     <div className="sport-one"  >
                         <p className='sport-icon' >
                             <SportsBasketballIcon />
                         </p>
                         <p>Basketboll</p>
                     </div>
-                    </Link>
+                    </NavLink>
                    
                     <div className="sport-two">
                         <p className='sport-icon'>
@@ -64,6 +64,12 @@ export default function LogInHome() {
                     </div>
                 </article>
             </section>
+
+            <style jsx>{`
+                .active {
+                    color: black !important;
+                }
+            `}</style>
         </div>
     )
 }
