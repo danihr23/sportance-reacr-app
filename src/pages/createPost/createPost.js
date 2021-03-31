@@ -1,15 +1,16 @@
 import { CircularProgress } from '@material-ui/core';
 import { logDOM } from '@testing-library/dom';
 import React,{useContext,useState,useEffect} from 'react'
-import Nav from '../../containers/nav'
+import Nav from '../../containers/LoginNav/nav';
+
 import { UserContext } from '../../context/user';
 import { db,auth } from '../../firebase';
 import './createPost.css';
 
 
-export default function CreatePost() {
+export default function CreatePost(props) {
 
-  
+  console.log(props);
     const [user,setUser] = useContext(UserContext).user;
 
     
@@ -57,7 +58,7 @@ export default function CreatePost() {
 
     return (
         <div className="createPost">
-            <Nav/>
+           <Nav/>
 
         <section class="create">
             <form  onSubmit={CreateCategorySubmit}>

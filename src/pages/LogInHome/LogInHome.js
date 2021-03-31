@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from '../../containers/nav'
+import Nav from '../../containers/LoginNav/nav'
 import Background from './background.jpg'
 import SportsBasketballIcon from '@material-ui/icons/SportsBasketball';
 import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
@@ -19,7 +19,7 @@ export default function LogInHome() {
 
             <section className="category">
                 <article className="sport">
-                    <NavLink activeClassName='active' to="/sponrance/category/bassketball">
+                    <NavLink activeClassName='active' to="/sponrance/basketball" >
                     <div className="sport-one"  >
                         <p className='sport-icon' >
                             <SportsBasketballIcon />

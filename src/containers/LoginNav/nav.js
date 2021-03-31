@@ -1,7 +1,8 @@
 import React,{useEffect, useState} from 'react'
-import { auth } from '../firebase';
+//import { auth } from '../firebase';
 import './nav.css'
 import Logo from './logo-text.png'
+import { auth } from '../../firebase'
 export default function Nav() {
 
 const [email, setEmail] = useState('')
@@ -14,7 +15,6 @@ const [email, setEmail] = useState('')
     })
 
   },[])
-
 
 
 
