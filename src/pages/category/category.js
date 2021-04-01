@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { db } from '../../firebase';
 import { Link, NavLink } from 'react-router-dom';
 import './category.css'
-
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 
 export default function Categoty(props) {
 
@@ -40,15 +40,32 @@ export default function Categoty(props) {
                     return (
 
                         <li className="otherPet">
-                            <h3>Name:{x.title}</h3>
-
+                           
+                            <article className="info-post">
                             <p className="post-img"><img src={x.imageURL} /></p>
-                            <p className="description">{x.description}</p>
-                            <div className="pet-info">
-                                <Link to="#"><button className="button"> Pet</button></Link>
-                                <Link to="#"><button className="button">Details</button></Link>
-
-                            </div>
+                            
+                            
+                                
+                                <div className="post-description">
+                                <p>{x.title}</p>
+                                
+                                </div>
+                                <div className="buttons-wrap">
+                                
+                                <div className="likes">
+                 
+                                <p><ThumbUpIcon/></p>
+                                <p>0</p>
+                                <Link to="#"><button className="button-like"> Pet</button></Link>
+                                </div>
+                                <Link to="#"><button className="button-info">read more</button></Link>
+                                
+                                
+                                </div>
+                               
+                                
+                                </article>
+                           
                         </li>
 
 

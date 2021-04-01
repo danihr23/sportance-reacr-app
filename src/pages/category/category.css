@@ -1,24 +1,118 @@
+
+body{
+    background-image: url('./background.jpg');
+    background-size: cover;
+}
+
 .post-groups{
     display: flex;
     margin: 120px 180px;
     
+    
+    width: auto;
+    box-sizing: border-box;
+   
+    outline: none;
+    height: 100%;
+    overflow: hidden;
+    
+ 
+    
 }
 .post-img img{
     display: inline-block;
-    min-width: 240px;
-    min-height: 220px;
-    width: 240px;
-    height: 220px;
-    margin: 0 0 10px 10px;
+    min-width: 200px;
+    min-height: 180px;
+    width: 200px;
+    height: 180px;
+    margin: 0 0 0px 10px;
   
 }
-.post-groups li{
 
-   
-    list-style: none;
-    margin: 20px 40px;
-    max-width: 250px;
+.info-post{
+
+    display: flex;
+    position: relative;
+    width: auto;
+    box-sizing: border-box;
+    flex-direction: column;
+    outline: none;
+    height: 100%;
+    overflow: hidden;
 }
 .posts{
     text-align: center;
+    
+    height: 100vh;
+}
+.post-groups li{
+    list-style: none;
+    margin: 10px 30px;
+    background: white;
+    max-height: 278px;
+    min-width: 214px;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 10px 11px 14px grey;
+}
+.post-description{
+    display: flex;
+    max-width: 220px;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    background-color:white
+}
+.post-description p{
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+   
+}
+
+.button-info{
+    line-height: 1;
+    cursor: pointer;
+    font-family: inherit;
+    box-sizing: border-box;
+    max-width: 334px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.1s ease-in-out;
+    font-size: 11px;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    min-width: 32px;
+    padding: 0 8px;
+    height: 23px;
+    color: #2B2B2B;
+    fill: #2B2B2B;
+    background: white;
+    position: relative;
+    right: -77px;
+    top: -54px;
+    
+   
+    
+}
+.likes{
+    display: flex;
+   
+}
+.likes p{
+    margin: 8px;
+}
+.button-like{
+    border: none;
+    position: relative;
+    top: 7px;
+    width: 50px;
+    padding: 4px;
+    border-radius: 4px;
+    background-color: #9A8833;
+   
 }
