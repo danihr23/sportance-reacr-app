@@ -13,20 +13,20 @@
       border-radius: 10px;
       margin: 0px 571px;
   }
-  img{
+  .logIn img{
     width: 648px;
     height: 141px;
 
 }
-  .field{
+  .field-logIn{
       display: flex;
   }
-  .icon{
+  .icon-logIn{
     position: relative;
     top: 16px;
     left: 29px;
   }
-  .field input{
+  .field-logIn input{
       height: 50px;
       width: 358px;
       border: none;
@@ -37,7 +37,7 @@
       text-align: center;
       background-color: #F7D23C;
   }
-  button{
+  .btnLogIn{
       width: 357px;
       height: 42px;
       margin-top: 10px;
@@ -46,7 +46,7 @@
       color: #F7D23C;
       background: #17254E;
   }
-  h1{
+  .titleLogIn{
       font-size: 68px;
       margin-top: 90px;
       margin-bottom: -194px;

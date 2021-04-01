@@ -13,7 +13,7 @@ import EmailIcon from '@material-ui/icons/Email';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 import VpnLockIcon from '@material-ui/icons/VpnLock';
 
-export default function SignupSportance() {
+export default function SignupSportance(props) {
 
     const [user, setUser] = useContext(UserContext).user;
     //console.log(user);
@@ -45,47 +45,51 @@ export default function SignupSportance() {
                 setUser(res.user);
             })
 
+            if(user){
+                props.history.push('/sportance/logIn')
+
+            }
+
 
     }
+    
 
-    if(user){
-            history.push('/sportance/logIn')    
-    }
+    
 
     return (
         <div className="sportanceSignup" >
                 <img  src={Logo} alt="Logo" />
 
 
-                    <h1>Sing Up</h1>
+                    <h1 className="titleSignUp">Sing Up</h1>
                   
 
             <form className="sigupForm" onSubmit={SingUpSubmit}>
 
                 
 
-                    <p className="field">
-                    <div className="icon">
+                    <p className="field-signUp">
+                    <div className="icon-signUp">
                     <EmailIcon/>
                     </div>
                         <input type="email" id="email" name="email" placeholder="write your email" />
 
                     </p>
-                    <p className="field">
-                    <div className="icon">
+                    <p className="field-signUp">
+                    <div className="icon-signUp">
                     <LockOpenIcon/>
                     </div>
                         <input type="password" id="password" name="password" placeholder="write your password" />
 
                     </p>
-                    <p className="field">
-                    <div className="icon">
+                    <p className="field-signUp">
+                    <div className="icon-signUp">
                     <VpnLockIcon/>
                     </div>
                         <input type="password" id="passwordConf" name="passwordConf" placeholder="Confirm your password" />
 
                     </p>
-                    <button type="submit"> Sign Up</button>
+                    <button className="btnSignUp" type="submit"> Sign Up</button>
                
             </form>
             

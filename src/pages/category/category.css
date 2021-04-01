@@ -1,0 +1,24 @@
+.post-groups{
+    display: flex;
+    margin: 120px 180px;
+    
+}
+.post-img img{
+    display: inline-block;
+    min-width: 240px;
+    min-height: 220px;
+    width: 240px;
+    height: 220px;
+    margin: 0 0 10px 10px;
+  
+}
+.post-groups li{
+
+   
+    list-style: none;
+    margin: 20px 40px;
+    max-width: 250px;
+}
+.posts{
+    text-align: center;
+}

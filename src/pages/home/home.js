@@ -8,11 +8,7 @@ import"./home.css";
 
 export default function Home(props) {
 
-    console.log(props);
-
-    auth.onAuthStateChanged((user)=>{
-        console.log(user.uid);
-    })
+   
   
     return (
         <div className="home" style={{ 

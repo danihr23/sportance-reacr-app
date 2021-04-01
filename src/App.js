@@ -8,6 +8,7 @@ import LogIn from './pages/logIn/logIn'
 import LogInHome from'./pages/LogInHome/LogInHome';
 import CreatePost from './pages/createPost/createPost'
 import Category from './pages/category/category'
+import LogOut from './containers/logOut/logOut'
 function App() {
   return (
   <UserContextProvider>
@@ -19,6 +20,7 @@ function App() {
       <Route path="/sportance/logInHome" component={LogInHome}/>
       <Route path="/sportance/createPost" component={CreatePost}/>
       <Route path="/sponrance/:category" component={Category}/>
+      <Route path="/sportance/logOut"  component={LogOut}/>
       </Switch>
 
      

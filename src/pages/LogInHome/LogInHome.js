@@ -19,57 +19,63 @@ export default function LogInHome() {
 
             <section className="category">
                 <article className="sport">
-                    <NavLink activeClassName='active' to="/sponrance/basketball" >
+                    <Link  to="/sponrance/basketball"style={{ textDecoration: 'none',color:'#35456D' }} >
                     <div className="sport-one"  >
                         <p className='sport-icon' >
                             <SportsBasketballIcon />
                         </p>
                         <p>Basketboll</p>
                     </div>
-                    </NavLink>
+                    </Link>
                    
+                    <Link  to="/sponrance/football" style={{ textDecoration: 'none',color:'#35456D' }}>
                     <div className="sport-two">
                         <p className='sport-icon'>
                             <SportsSoccerIcon />
                         </p>
                         <p>Football</p>
                     </div>
+                   </Link>
                 </article>
                 <article className="sport">
+                <Link to="/sponrance/volleyball" style={{ textDecoration: 'none',color:'#35456D' }}>
                     <div className="sport-one">
                         <p className='sport-icon'>
                             <SportsVolleyballIcon />
                         </p>
                         <p>Volleyball</p>
                     </div>
+                    </Link>
+                    <Link  to="/sponrance/tennis" style={{ textDecoration: 'none',color:'#35456D' }}>
                     <div className="sport-two">
                         <p className='sport-icon'>
                             <SportsTennisIcon />
                         </p>
                         <p>Tennis</p>
                     </div>
+                    </Link>
                 </article>
                 <article className="sport">
+                <Link  to="/sponrance/NFL" style={{ textDecoration: 'none',color:'#35456D' }} >
                     <div className="sport-one">
                         <p className='sport-icon'>
                             <SportsFootballIcon />
                         </p>
                         <p>NFL</p>
                     </div>
+                    </Link>
+                    <Link to="/sponrance/other" style={{ textDecoration: 'none',color:'#35456D' }} >
                     <div className="sport-two">
                         <p className='sport-icon'>
                             <SportsIcon />
                         </p>
                         <p>Other</p>
                     </div>
+                    </Link>
                 </article>
             </section>
 
-            <style jsx>{`
-                .active {
-                    color: black !important;
-                }
-            `}</style>
+           
         </div>
     )
 }

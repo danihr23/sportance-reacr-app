@@ -1,28 +1,37 @@
-import React,{useEffect, useState} from 'react'
+import React,{useEffect, useState,useContext} from 'react'
 //import { auth } from '../firebase';
 import './nav.css'
+import LogOut from "../logOut/logOut"
 import Logo from './logo-text.png'
 import { auth } from '../../firebase'
-export default function Nav() {
+import { Link, NavLink } from 'react-router-dom';
+import { UserContext } from '../../context/user';
+export default function Nav(props) {
+
+    console.log(props);
 
 const [email, setEmail] = useState('')
-
+const [user, setUser]= useContext(UserContext).user
   useEffect(()=>{
     auth.onAuthStateChanged((user)=>{
         console.log(user);
+        if(!user){
+        return ;
+        }
         setEmail(user.email)
-        
     })
 
   },[])
+
+  
 
 
 
     return (
         <div className="navigation">
-
+        <Link to="/sportance/logInHome" style={{ textDecoration: 'none' }} >
         <img src={Logo} alt="logo" className="logo" />
-
+        </Link>
         <div className="welcome">
         <p>Welome {email} in SPORTANCE</p>
         </div>
@@ -30,15 +39,17 @@ const [email, setEmail] = useState('')
         <article>
             <ul>
                 <li>
-                    <p>Create SportNew</p>    
+                    <Link to='/sportance/createPost' style={{ textDecoration: 'none',color:'#F7D23C' }}>
+                    Create SportNew
+                    </Link>    
                 </li>
                 <li>
                     <p>My Profile</p>
                 </li>
                
-                <li>
-                    <p>Log Out</p>    
-                </li>
+                
+                    <LogOut/>  
+                
             </ul>
                
         </article>

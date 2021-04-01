@@ -1,0 +1,8 @@
+.btnLogOut{
+    margin: 21px 10px;
+    list-style: none;
+    border-radius: 8px;
+  background-color: #35456D;
+  color: #F7D23C;
+  padding: 10px;
+}
