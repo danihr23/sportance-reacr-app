@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import { db } from '../../firebase';
+import { auth, db } from '../../firebase';
 import Nav from '../../containers/LoginNav/nav'
 
 import './postDetails.css'
@@ -11,8 +11,16 @@ export default function PostDetails(props) {
 
     const category = props.match.params.category;
     const idPost = props.match.params.id;
-
+    const [user, setUser] = useState('');
     const [data, setData] = useState([])
+
+    const getUserId = () => {
+        auth.onAuthStateChanged((user) => {
+
+            setUser(user.uid);
+
+        })
+    }
     const getInfo = () => {
         db.collection(category).doc(idPost).get()
             .then((doc) => {
@@ -24,6 +32,7 @@ export default function PostDetails(props) {
     console.log(data.title);
 
     useEffect(() => {
+        getUserId();
         getInfo();
     }, [])
 
@@ -40,10 +49,10 @@ export default function PostDetails(props) {
 
                 <div className='details-discription'>
 
-                
+
                     <p>{data.description}</p>
 
-                 </div>
+                </div>
 
 
                 <div className="details-btn">
@@ -51,8 +60,8 @@ export default function PostDetails(props) {
 
                     <p>0</p>
 
-
-                    <Link to="#"><button className="button">read more</button></Link>
+                    {user===data.userId ? <Link to="#"><button className="button">read more</button></Link> : '' }
+                   
 
 
 
