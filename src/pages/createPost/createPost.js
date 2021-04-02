@@ -1,6 +1,7 @@
 import { CircularProgress } from '@material-ui/core';
 import { logDOM } from '@testing-library/dom';
 import React,{useContext,useState,useEffect} from 'react'
+import { useHistory } from 'react-router-dom';
 import Nav from '../../containers/LoginNav/nav';
 
 import { UserContext } from '../../context/user';
@@ -13,7 +14,9 @@ export default function CreatePost(props) {
   console.log(props);
     const [user,setUser] = useContext(UserContext).user;
 
-    
+    const [error, setError] = useState(false)
+
+    const history =useHistory();
 
     useEffect(()=>{
 
@@ -37,22 +40,31 @@ export default function CreatePost(props) {
         const description = e.target.description.value;
         const imageURL = e.target.imageURL.value;
 
-        db.
-        collection(category).add({
-            title,
-            description,
-            imageURL,
-            userId
-        })
-        .then(res=>{
-            console.log(res.id);
-        })
-      
+        
+            if(category!='' && title!=''&& description!='' && imageURL!='' ){
+                db.
+                collection(category).add({
+                    title,
+                    description,
+                    imageURL,
+                    userId
+                })
+                .then(res=>{
+                    console.log(res.id);
+                })
+              
+        
+                console.log(category);
+                history.push('/sportance/logInHome')
+              
+            }
+            else{
+               setError(true);
+            }
 
-        console.log(category);
-
-      
+            
     }
+            
 
 
 
@@ -60,17 +72,16 @@ export default function CreatePost(props) {
         <div className="createPost">
            <Nav/>
 
-        <section class="create">
+        <section class="create" >
             <form  onSubmit={CreateCategorySubmit}>
                 <fieldset>
-                    <legend>Add new Pet</legend>
-                    <p class="field-create">
+                    <legend className='legend'>Create your SPORTANCE Post</legend>
+                    <div class="field-create">
                         <label htmlFor="name">Title</label>
                         <span class="input">
-                            <input type="text" name="title" id="name" placeholder="Name" />
-                           
+                            <input type="text" name="title" id="name" placeholder="title" />
                         </span>
-                    </p>
+                    </div>
                     <p className="field-create">
                         <label htmlFor="description">Description</label>
                         <span className="input">
@@ -92,14 +103,17 @@ export default function CreatePost(props) {
                             <select type="text" name="category">
                                 <option value="basketball">Basketball</option>
                                 <option value="football">Football</option>
-                                <option value="voleyball">Volleyball</option>
+                                <option value="volleyball">Volleyball</option>
                                 <option value="NFL">NFL</option>
                                 <option value="Other">Other</option>
                             </select>
                           
                         </span>
                     </p>
-                    <input className="button submit" type="submit" value="Add Pet" />
+                    <input className="button-submit" type="submit" value="Create Post" />
+
+                    {error==true ? <h1 className="error">You have to fill all fields</h1> : ''} 
+
                 </fieldset>
             </form>
         </section>

@@ -45,3 +45,11 @@
 .details-btn p{
     margin: 0px 15px;
 }
+.button-edit{
+    width: 74px;
+    border-radius: 4px;
+    padding: 4px;
+    color: white;
+    border: none;
+    background-color:  #35456D;
+}

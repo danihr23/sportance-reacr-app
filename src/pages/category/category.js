@@ -35,7 +35,7 @@ export default function Categoty(props) {
     return (
         <div className="posts">
             <Nav/>
-            <h1 className='posts-title'>hello category</h1>
+           
             <ul className="post-groups">
                 {dataStor.map(x => {
 

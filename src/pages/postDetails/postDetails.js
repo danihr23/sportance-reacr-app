@@ -39,7 +39,7 @@ export default function PostDetails(props) {
     return (
         <div className='details'>
             <Nav />
-            <h1 className='posts-title'>hello category</h1>
+            
 
             <article className="details-post">
 
@@ -60,7 +60,7 @@ export default function PostDetails(props) {
                 <ThumbUpIcon/>
                     <p>0</p>
                       
-                    {user===data.userId ? <Link to="#"><button className="button">Edit</button></Link> : '' }
+                    {user===data.userId ? <Link to="#"><button className="button-edit">Edit</button></Link> : '' }
                    
 
 
