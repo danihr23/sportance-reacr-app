@@ -67,8 +67,8 @@
     background-color:slateblue;
     color: white;
 }
-label{
-    font-size: 28px;
+.label{
+    font-size: 29px;
     font-style: italic;
     font-stretch: narrower;
     color: royalblue;

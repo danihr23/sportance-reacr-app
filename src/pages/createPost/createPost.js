@@ -77,13 +77,13 @@ export default function CreatePost(props) {
                 <fieldset>
                     <legend className='legend'>Create your SPORTANCE Post</legend>
                     <div class="field-create">
-                        <label htmlFor="name">Title</label>
+                        <label htmlFor="name" className="label">Title</label>
                         <span class="input">
                             <input type="text" name="title" id="name" placeholder="title" />
                         </span>
                     </div>
                     <p className="field-create">
-                        <label htmlFor="description">Description</label>
+                        <label  className="label" htmlFor="description">Description</label>
                         <span className="input">
                             <textarea rows="4" cols="45" type="text" name="description" id="description"
                                 placeholder="Description"></textarea>
@@ -91,14 +91,14 @@ export default function CreatePost(props) {
                         </span>
                     </p>
                     <p className="field-create">
-                        <label htmlFor="image">Image</label>
+                        <label className="label" htmlFor="image">Image</label>
                         <span className="input">
                             <input type="text" name="imageURL" id="image" placeholder="Image" />
                             
                         </span>
                     </p>
                     <p className="field-create">
-                        <label htmlFor="category">Category</label>
+                        <label  className="label" htmlFor="category">Category</label>
                         <span className="input">
                             <select type="text" name="category">
                                 <option value="basketball">Basketball</option>
