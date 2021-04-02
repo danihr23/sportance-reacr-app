@@ -36,3 +36,12 @@
 .details-discription{
     margin: 25px;
 }
+.details-btn{
+    display: flex;
+   position: relative;
+   left:516px;
+
+}
+.details-btn p{
+    margin: 0px 15px;
+}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { auth, db } from '../../firebase';
 import Nav from '../../containers/LoginNav/nav'
-
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import './postDetails.css'
 
 
@@ -57,26 +57,19 @@ export default function PostDetails(props) {
 
                 <div className="details-btn">
 
-
+                <ThumbUpIcon/>
                     <p>0</p>
-
-                    {user===data.userId ? <Link to="#"><button className="button">read more</button></Link> : '' }
+                      
+                    {user===data.userId ? <Link to="#"><button className="button">Edit</button></Link> : '' }
                    
 
 
 
 
 
-                </div>   </article>
+                </div>  
 
-
-
-
-
-
-
-
-
+        </article>
         </div>
     )
 }

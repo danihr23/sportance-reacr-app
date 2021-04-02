@@ -44,7 +44,7 @@ export default function Categoty(props) {
 
                         <li className="otherPet" key={x.id}> 
                          
-                            <article className="info-post">
+                     <article className="info-post">
                             <p className="post-img"><img src={x.info.imageURL} /></p>
                             
                             
@@ -61,13 +61,12 @@ export default function Categoty(props) {
                                 <p>0</p>
                                 
                                 </div>
+                                
                                 <Link to={`/details/${category}/${x.id}`}><button className="button-info">read more</button></Link>
-                                
-                                
                                 </div>
                                
                                 
-                                </article>
+                            </article>
                            
                         </li>
 
