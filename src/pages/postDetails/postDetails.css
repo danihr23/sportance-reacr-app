@@ -1,0 +1,38 @@
+.details{
+    text-align: center;
+  
+}
+
+.details-post{
+    margin: 120px 180px;
+    
+    
+    width: auto;
+    box-sizing: border-box;
+   background-color: white;
+    outline: none;
+    height: 100%;
+    overflow: hidden;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 10px 11px 14px grey;
+}
+.detail-img img{
+   
+        display: inline-block;
+        min-width: 320px;
+        min-height: 280px;
+        width: 320px;
+        height: 280px;
+        margin: 0 0 0px 10px;
+}
+.details-title{
+    margin: 25px auto;
+    font-size: 26px;
+    font-style: italic;
+    font-stretch: narrower;
+    font-weight: bold;
+}
+.details-discription{
+    margin: 25px;
+}

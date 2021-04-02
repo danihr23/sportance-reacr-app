@@ -4,7 +4,7 @@ import { db } from '../../firebase';
 import { Link, NavLink } from 'react-router-dom';
 import './category.css'
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
-
+import Nav from '../../containers/LoginNav/nav'
 export default function Categoty(props) {
 
     const category = props.match.params.category;
@@ -12,11 +12,11 @@ export default function Categoty(props) {
 
 
     const [dataStor, setDataStor] = useState([]);
-
+    const dataInfo= [{id:'',info:''}];
     const fetchData = () => {
         db.collection(category).get()
             .then((data) => {
-                const dataInfo = data.docs.map(doc => doc.data());
+                 data.docs.map(doc =>  dataInfo.push({id:doc.id, info:doc.data()}));
                 //console.log(dataInfo);
                 setDataStor(dataInfo)
             })
@@ -34,20 +34,23 @@ export default function Categoty(props) {
 
     return (
         <div className="posts">
+            <Nav/>
             <h1 className='posts-title'>hello category</h1>
             <ul className="post-groups">
                 {dataStor.map(x => {
+
+                    if(x.id !=''){
                     return (
 
-                        <li className="otherPet">
-                           
+                        <li className="otherPet" key={x.id}> 
+                         
                             <article className="info-post">
-                            <p className="post-img"><img src={x.imageURL} /></p>
+                            <p className="post-img"><img src={x.info.imageURL} /></p>
                             
                             
                                 
                                 <div className="post-description">
-                                <p>{x.title}</p>
+                                <p>{x.info.title}</p>
                                 
                                 </div>
                                 <div className="buttons-wrap">
@@ -56,9 +59,9 @@ export default function Categoty(props) {
                  
                                 <p><ThumbUpIcon/></p>
                                 <p>0</p>
-                                <Link to="#"><button className="button-like"> Pet</button></Link>
+                                
                                 </div>
-                                <Link to="#"><button className="button-info">read more</button></Link>
+                                <Link to={`/details/${category}/${x.id}`}><button className="button-info">read more</button></Link>
                                 
                                 
                                 </div>
@@ -70,9 +73,9 @@ export default function Categoty(props) {
 
 
                     )
-
+                    }
                 })}
-
+            
             </ul>
         </div>
     )
