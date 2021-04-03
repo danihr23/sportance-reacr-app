@@ -36,7 +36,7 @@ export default function CreatePost(props) {
      
         const userId=user.uid;
         const category = e.target.category.value;
-        const title = e.target.category.value;
+        const title = e.target.title.value;
         const description = e.target.description.value;
         const imageURL = e.target.imageURL.value;
 
@@ -103,6 +103,7 @@ export default function CreatePost(props) {
                             <select type="text" name="category">
                                 <option value="basketball">Basketball</option>
                                 <option value="football">Football</option>
+                                <option value="tennis">Tennis</option>
                                 <option value="volleyball">Volleyball</option>
                                 <option value="NFL">NFL</option>
                                 <option value="Other">Other</option>
