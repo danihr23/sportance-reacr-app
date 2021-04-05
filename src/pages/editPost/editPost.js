@@ -25,11 +25,51 @@ export default function EditPost(props) {
                 setData(doc.data());
           })
     }
-
     const OnChangeSubmit=(e)=>{
         setData({...data, [e.target.name]:e.target.value})
     }
     
+
+    const OnSubmitChanges=(e)=>{
+        e.preventDefault();
+        
+
+        
+        
+        //const userId=user.uid;
+        //const currCategory = data.category;
+      
+        const title = e.target.title.value;
+        const description = data.description
+        const imageURL = data.imageURL
+        console.log(title)
+
+        
+            if(category!='' && title!=''&& description!='' && imageURL!='' ){
+                db.
+                collection(category).doc(idPost).set({
+                    ...data,
+                    title,
+                    description,
+                    imageURL,
+                    
+                })
+                .then(res=>{
+                    //console.log(res.id);
+                })
+              
+        
+                console.log(category);
+                history.push('/sportance/logInHome')
+              
+            }
+            else{
+               setError(true);
+            }
+
+    }
+
+  
     
 
    
@@ -51,7 +91,7 @@ export default function EditPost(props) {
     <section class="edit" >
 
 
-        <form  >
+        <form onSubmit={OnSubmitChanges} >
             <fieldset>
                 <legend className='legend-edit'>Edit your SPORTANCE Post</legend>
                 <div className="field-edit">
@@ -78,7 +118,7 @@ export default function EditPost(props) {
                 <p className="field-edit">
                     <label  className="label-edit" htmlFor="category">Category</label>
                     <span className="input-edit">
-                        <select type="text" name="category">
+                        <select type="text" name="category"onChange={OnChangeSubmit}>
                             <option value="basketball">Basketball</option>
                             <option value="football">Football</option>
                             <option value="tennis">Tennis</option>
