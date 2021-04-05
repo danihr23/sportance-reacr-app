@@ -60,7 +60,7 @@ export default function PostDetails(props) {
                 <ThumbUpIcon/>
                     <p>0</p>
                       
-                    {user===data.userId ? <Link to="#"><button className="button-edit">Edit</button></Link> : '' }
+                    {user===data.userId ? <Link to={`/edit/${category}/${idPost}`}><button className="button-edit">Edit</button></Link> : '' }
                    
 
 

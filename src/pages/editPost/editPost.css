@@ -1,0 +1,75 @@
+
+.editPost{
+    text-align: center;
+}
+
+
+.edit{
+    
+    margin: 120px 180px;
+    
+    
+    width: auto;
+    box-sizing: border-box;
+   background-color: #F7D23C;
+    outline: none;
+    height: 100%;
+    overflow: hidden;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 10px 11px 14px grey;
+}
+.field-edit{
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+}
+.field-edit{
+    display: flex;
+}
+.input-edit input{
+    width: 283px;
+    height: 34px;
+    background-color: #35456D;
+    color: white;
+
+}
+.legend-edit{
+    font-size: 28px;
+    font-style: italic;
+    font-stretch: narrower;
+    font-weight: bold;
+    color:#35456D;
+}
+.input-edit textarea{
+    margin: 0px;
+    width: 423px;
+    height: 94px;
+    background-color: #35456D;
+    color: white;
+
+}
+.input-edit select{
+    width: 183px;
+    height: 24px;
+    background-color: #35456D;
+    color: white;
+}
+.error{
+    background-color: red;
+}
+.button-save{
+    width: 100px;
+    padding: 6px;
+    margin: 15px;
+    border-radius: 7px;
+    border: none;
+    background-color:slateblue;
+    color: white;
+}
+.label{
+    font-size: 29px;
+    font-style: italic;
+    font-stretch: narrower;
+    color: royalblue;
+}

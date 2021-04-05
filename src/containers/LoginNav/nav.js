@@ -33,14 +33,14 @@ const [user, setUser]= useContext(UserContext).user
         <img src={Logo} alt="logo" className="logo" />
         </Link>
         <div className="welcome">
-        <p>Welome {email} in SPORTANCE</p>
+        <p>Welcome {email} in SPORTANCE</p>
         </div>
 
         <article>
             <ul>
                 <li>
                     <Link to='/sportance/createPost' style={{ textDecoration: 'none',color:'#F7D23C' }}>
-                    Create SportNew
+                    Create Post
                     </Link>    
                 </li>
                 <li>

@@ -9,7 +9,8 @@ import LogInHome from'./pages/LogInHome/LogInHome';
 import CreatePost from './pages/createPost/createPost'
 import Category from './pages/category/category'
 import LogOut from './containers/logOut/logOut'
-import PostDetails from './pages/postDetails/postDetails'
+import PostDetails from './pages/postDetails/postDetails' 
+import EditPost from './pages/editPost/editPost'
 function App() {
   return (
   <UserContextProvider>
@@ -23,6 +24,7 @@ function App() {
       <Route path="/sponrance/:category" component={Category}/>
       <Route path="/sportance/logOut"  component={LogOut}/>
       <Route path= "/details/:category/:id" component={PostDetails}/>
+      <Route path="/edit/:category/:id" component={EditPost}/>
       </Switch>
 
      

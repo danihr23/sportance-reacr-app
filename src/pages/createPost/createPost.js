@@ -2,8 +2,8 @@ import { CircularProgress } from '@material-ui/core';
 import { logDOM } from '@testing-library/dom';
 import React,{useContext,useState,useEffect} from 'react'
 import { useHistory } from 'react-router-dom';
-import Nav from '../../containers/LoginNav/nav';
-
+import CreateNav from '../../containers/CreatePostNav/createPostNav'
+import Nav from  '../../containers/LoginNav/nav'
 import { UserContext } from '../../context/user';
 import { db,auth } from '../../firebase';
 import './createPost.css';
@@ -70,7 +70,9 @@ export default function CreatePost(props) {
 
     return (
         <div className="createPost">
-           <Nav/>
+
+            <CreateNav/>
+               
 
         <section class="create" >
             <form  onSubmit={CreateCategorySubmit}>

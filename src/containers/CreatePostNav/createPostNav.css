@@ -1,0 +1,33 @@
+.navigation{
+    background-color:#0D1424;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    text-align: center;
+    color: white;
+}
+.welcome{
+    color:#F7D23C;
+    font-size: 36px;
+    margin: 25px auto;
+    padding-left:  107px;;
+}
+.navigation ul{
+    display: flex;
+
+}
+.navigation ul li{
+    margin: 21px 10px;
+    list-style: none;
+    border-radius: 8px;
+  background-color: #35456D;
+  color: #F7D23C;
+  padding: 10px;
+}
+.logo{
+    width: 133px;
+    height: 47px;
+    margin: 16px;
+
+}
+
