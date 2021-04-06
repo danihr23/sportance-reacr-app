@@ -14,12 +14,12 @@ export default function PostDetails(props) {
     const [user, setUser] = useState('');
     const [data, setData] = useState([])
 
-    const getUserId = () => {
+    function getUserId() {
         auth.onAuthStateChanged((user) => {
 
             setUser(user.uid);
 
-        })
+        });
     }
     const getInfo = () => {
         db.collection(category).doc(idPost).get()
@@ -60,7 +60,10 @@ export default function PostDetails(props) {
                 <ThumbUpIcon/>
                     <p>0</p>
                       
-                    {user===data.userId ? <Link to={`/edit/${category}/${idPost}`}><button className="button-edit">Edit</button></Link> : '' }
+                    {user===data.userId ? <div>
+                        <Link to={`/edit/${category}/${idPost}`}><button className="button-edit">Edit</button></Link>
+                        <Link to={`/delete/${category}/${idPost}`}><button className="button-delete">Delete</button></Link>
+                    </div>  : '' }
                    
 
 

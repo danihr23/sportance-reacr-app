@@ -11,6 +11,7 @@ import Category from './pages/category/category'
 import LogOut from './containers/logOut/logOut'
 import PostDetails from './pages/postDetails/postDetails' 
 import EditPost from './pages/editPost/editPost'
+import Delete from './containers/deletePost/deletePost'
 function App() {
   return (
   <UserContextProvider>
@@ -25,6 +26,7 @@ function App() {
       <Route path="/sportance/logOut"  component={LogOut}/>
       <Route path= "/details/:category/:id" component={PostDetails}/>
       <Route path="/edit/:category/:id" component={EditPost}/>
+      <Route path= "/delete/:category/:id" component={Delete}/>
       </Switch>
 
      

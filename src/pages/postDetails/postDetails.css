@@ -53,3 +53,12 @@
     border: none;
     background-color:  #35456D;
 }
+.button-delete{
+    width: 74px;
+    border-radius: 4px;
+    padding: 4px;
+    color: white;
+    border: none;
+    background-color:  #35456D;
+    margin-left: 15px;
+}
