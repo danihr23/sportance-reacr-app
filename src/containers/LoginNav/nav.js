@@ -6,9 +6,16 @@ import Logo from './logo-text.png'
 import { auth } from '../../firebase'
 import { Link, NavLink } from 'react-router-dom';
 import { UserContext } from '../../context/user';
+
 export default function Nav(props) {
 
     console.log(props);
+
+    //const [user,setUser] = useContext(UserContext).user;
+   
+
+
+
 
 const [email, setEmail] = useState('')
 const [user, setUser]= useContext(UserContext).user

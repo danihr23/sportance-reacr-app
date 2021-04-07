@@ -32,13 +32,7 @@ export default function EditPost(props) {
 
     const OnSubmitChanges=(e)=>{
         e.preventDefault();
-        
 
-        
-        
-        //const userId=user.uid;
-        //const currCategory = data.category;
-      
         const title = e.target.title.value;
         const description = data.description
         const imageURL = data.imageURL
@@ -88,7 +82,7 @@ export default function EditPost(props) {
         <Nav/>
            
 
-    <section class="edit" >
+    <section className="edit" >
 
 
         <form onSubmit={OnSubmitChanges} >

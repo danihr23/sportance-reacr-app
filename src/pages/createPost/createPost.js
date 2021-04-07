@@ -27,12 +27,14 @@ export default function CreatePost(props) {
 
     },[])
 
+    console.log(user);
+
     const CreateCategorySubmit =(e)=>{
         e.preventDefault();
         
 
         
-        console.log(user.uid); 
+       
      
         const userId=user.uid;
         const category = e.target.category.value;
@@ -47,7 +49,8 @@ export default function CreatePost(props) {
                     title,
                     description,
                     imageURL,
-                    userId
+                    userId,
+                    likes:'0'
                 })
                 .then(res=>{
                     console.log(res.id);
@@ -74,13 +77,13 @@ export default function CreatePost(props) {
             <CreateNav/>
                
 
-        <section class="create" >
+        <section className="create" >
             <form  onSubmit={CreateCategorySubmit}>
                 <fieldset>
                     <legend className='legend'>Create your SPORTANCE Post</legend>
-                    <div class="field-create">
+                    <div className="field-create">
                         <label htmlFor="name" className="label">Title</label>
-                        <span class="input">
+                        <span className="input">
                             <input type="text" name="title" id="name" placeholder="title" />
                         </span>
                     </div>

@@ -7,13 +7,14 @@ import Logo from './logo-text.png'
 import EmailIcon from '@material-ui/icons/Email';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 import { useRadioGroup } from '@material-ui/core';
+import AuthInfo from '../../services/authInfo'
 
-
-export default function LogIn(props) {
+export default function LogIn({props,history}) {
         console.log(props);
  
         const [user,setUser] = useContext(UserContext).user;
-        //const history = useHistory();
+
+       
         
         const LogInSubmit = (e)=> {
             e.preventDefault();
@@ -21,32 +22,38 @@ export default function LogIn(props) {
             const email = e.target.email.value;
            
             const password = e.target.password.value;
-            console.log(user);
-
+            
+           
             
             
                 auth.signInWithEmailAndPassword(email,password)
             .then(res=>{
-            
-               
-               
+
+                const currUser = res.user;
+                if(currUser){
+                    history.push('/sportance/logInHome')
+                   }
+                    
+                 
+
             })
 
                 
             
         }
+
+
+            
        useEffect(()=>{
            auth.onAuthStateChanged((user) => {
             setUser(user);
-            
+          
+            //console.log(user);
             
            })
-       })
-        
-       if(user){
-        props.history.push('/sportance/logInHome')
-       }
-        
+       },[])
+       
+       
 
     return (
 
@@ -60,21 +67,21 @@ export default function LogIn(props) {
 
 
 
-                <p className="field-logIn">
-                    <div className="icon-logIn">
+                <div className="field-logIn">
+                    <p className="icon-logIn">
                     <EmailIcon/>
-                    </div>
+                    </p>
                     
                     <input type="email" id="email" name="email" placeholder="write your email" />
 
-                </p>
-                <p className="field-logIn">
-                    <div className="icon-logIn">
+                </div>
+                <div className="field-logIn">
+                    <p className="icon-logIn">
                     <LockOpenIcon/>
-                    </div>
+                    </p>
                     
                     <input type="password" id="password" name="password" placeholder="write your password" />
-                </p>
+                </div>
 
                 <button className="btnLogIn" type="submit"> Sign In</button>
 

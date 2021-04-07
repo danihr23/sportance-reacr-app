@@ -58,7 +58,7 @@ export default function Categoty(props) {
                                 <div className="likes">
                  
                                 <p><ThumbUpIcon/></p>
-                                <p>0</p>
+                                <p>{x.info.likes}</p>
                                 
                                 </div>
                                 

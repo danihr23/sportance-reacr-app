@@ -13,7 +13,7 @@ export default function PostDetails(props) {
     const idPost = props.match.params.id;
     const [user, setUser] = useState('');
     const [data, setData] = useState([])
-
+    const [like, setLike] = useState()
     function getUserId() {
         auth.onAuthStateChanged((user) => {
 
@@ -27,9 +27,29 @@ export default function PostDetails(props) {
                 //console.log(doc.data());
 
                 setData(doc.data());
+                setLike(doc.data().likes);
             })
     }
-    console.log(data.title);
+
+  
+
+    const OnSubmitLike=()=>{
+
+       
+        setLike(Number(like+1));
+
+        console.log(like);
+
+        db.collection(category).doc(idPost).update({
+            
+            likes:like+1
+        })
+    }
+     
+
+   
+   
+    
 
     useEffect(() => {
         getUserId();
@@ -57,8 +77,9 @@ export default function PostDetails(props) {
 
                 <div className="details-btn">
 
-                <ThumbUpIcon/>
-                    <p>0</p>
+               <button type='submit' onClick={OnSubmitLike} ><ThumbUpIcon/></button>
+                
+                    <p>{like}</p>
                       
                     {user===data.userId ? <div>
                         <Link to={`/edit/${category}/${idPost}`}><button className="button-edit">Edit</button></Link>
