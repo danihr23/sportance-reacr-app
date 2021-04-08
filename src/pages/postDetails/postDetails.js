@@ -14,6 +14,7 @@ export default function PostDetails(props) {
     const [user, setUser] = useState('');
     const [data, setData] = useState([])
     const [like, setLike] = useState()
+    const [isClicked, setIsClicked] = useState(false)
     function getUserId() {
         auth.onAuthStateChanged((user) => {
 
@@ -37,7 +38,7 @@ export default function PostDetails(props) {
 
        
         setLike(Number(like+1));
-
+        setIsClicked(true)
         console.log(like);
 
         db.collection(category).doc(idPost).update({
@@ -76,8 +77,9 @@ export default function PostDetails(props) {
 
 
                 <div className="details-btn">
-
-               <button type='submit' onClick={OnSubmitLike} ><ThumbUpIcon/></button>
+                {isClicked==true ? <button type='submit' disabled style={{background: 'lightblue'}} onClick={OnSubmitLike} ><ThumbUpIcon/></button> 
+                : <button type='submit' onClick={OnSubmitLike} ><ThumbUpIcon/></button>}
+               
                 
                     <p>{like}</p>
                       
