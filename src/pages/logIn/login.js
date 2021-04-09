@@ -37,6 +37,7 @@ export default function LogIn({props,history}) {
                  
 
             })
+            .catch(err=>console.log(err));
 
                 
             
@@ -51,6 +52,7 @@ export default function LogIn({props,history}) {
             //console.log(user);
             
            })
+           .catch(err=>console.log(err));
        },[])
        
        

@@ -20,6 +20,7 @@ export default function Categoty(props) {
                 //console.log(dataInfo);
                 setDataStor(dataInfo)
             })
+            .catch(err=>console.log(err));
     }
 
     useEffect(() => {

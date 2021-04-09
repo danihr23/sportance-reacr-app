@@ -30,6 +30,7 @@ export default function PostDetails(props) {
                 setData(doc.data());
                 setLike(doc.data().likes);
             })
+            .catch(err=>console.log(err));
     }
 
   
@@ -45,6 +46,7 @@ export default function PostDetails(props) {
             
             likes:like+1
         })
+        .catch(err=>console.log(err));
     }
      
 

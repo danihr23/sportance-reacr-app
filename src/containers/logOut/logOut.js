@@ -18,6 +18,7 @@ export default function LogOut() {
              
                 
         })
+        .catch(err=>console.log(err));
         }
         
   

@@ -12,6 +12,7 @@ export default function DeletePost(props) {
              
             history.push('/sportance/logInHome');
         })
+        .catch(err=>console.log(err));
     },[])
 
     

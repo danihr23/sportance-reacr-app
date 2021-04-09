@@ -51,6 +51,7 @@ export default function EditPost(props) {
                 .then(res=>{
                     //console.log(res.id);
                 })
+                .catch(err=>console.log(err));
               
         
                 console.log(category);

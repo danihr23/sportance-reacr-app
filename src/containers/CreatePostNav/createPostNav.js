@@ -19,6 +19,7 @@ export default function CreatePostNav(props) {
             }
             setEmail(user.email)
         })
+        .catch(err=>console.log(err));
      
     
       },[])
