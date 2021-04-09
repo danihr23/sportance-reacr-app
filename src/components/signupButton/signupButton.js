@@ -3,8 +3,8 @@ import {Link} from 'react-router-dom'
 import "./signupButton.css";
 export default function signupButton() {
     return (
-        <div className="signupButton">
-            <p><Link to="/stortance/signup">Sign Up</Link></p>
-        </div>
+
+        <Link to="/stortance/signup"><button className="signupButton">Sign Up</button></Link>
+        
     )
 }

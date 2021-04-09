@@ -18,6 +18,7 @@ export default function Home(props) {
 
             <img src="logo-image.png" alt="Logo"/> 
 
+           
             <SignupButton/>
 
             <p className="home-text"> Already have an account? <Link to="/sportance/logIn">Log in!</Link> </p>

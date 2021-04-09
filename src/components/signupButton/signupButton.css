@@ -1,16 +1,13 @@
 .signupButton{
     background-color: #F7D23C;
-    max-width: 250px;
-    text-align: center;
-    padding: 12px 16px;
-    border-radius: 11px;
- 
-    font-size: 20px;
-    font-family: 'Roboto', sans-serif;
+   
+    width: 277px;
+    padding: 13px;
+    border-radius: 8px;
     position: relative;
-    left: 620px;
-}
-.signupButton a {
+    left: -123px;
     color: #35456D;
+    font-size: 17px;
     text-decoration: none;
 }
+
