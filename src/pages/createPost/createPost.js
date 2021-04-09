@@ -24,7 +24,7 @@ export default function CreatePost(props) {
             setUser(user);
             
         })
-        .catch(err=>console.log(err));
+       
 
     },[])
 

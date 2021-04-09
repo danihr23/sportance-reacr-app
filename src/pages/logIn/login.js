@@ -52,7 +52,7 @@ export default function LogIn({props,history}) {
             //console.log(user);
             
            })
-           .catch(err=>console.log(err));
+           
        },[])
        
        

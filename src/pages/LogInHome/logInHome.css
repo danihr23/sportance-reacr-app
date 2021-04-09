@@ -1,7 +1,9 @@
 .logInHome{
     height: 100vh;
-    background-size: cover;
-    background-color: #35456D;
+        background-image: url('./background.jpg');
+        background-size: cover;
+        background-repeat: 'no-repeat';
+    
 }
 
 .category{

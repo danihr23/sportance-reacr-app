@@ -43,6 +43,7 @@ export default function SignupSportance({props, history}) {
                 
                 setUser(res.user);
             })
+            .catch(err=>console.log(err));
 
             if(user){
                 history.push('/sportance/logIn')

@@ -15,11 +15,13 @@
     position: relative;
     top: 281px;
     border-radius: 10px;
-    margin: 0px 571px;
+    height: 220px;
+    width: 378px;
+    margin: auto;
 }
 .field-signUp input{
-    height: 50px;
-    width: 358px;
+    height: 48px;
+    width: 345px;
     border: none;
     border-bottom: 2px solid gray;
     font-size: 15px;
@@ -30,9 +32,12 @@
     background-color: #F7D23C;
 }
 .btnSignUp{
-    width: 357px;
-    height: 42px;
+    position: relative;
+    left: 10px;
+    width: 342px;
+    height: 43px;
     margin-top: 10px;
+    border-radius: 8px;
     font-size: 15px;
     border: none;
     color: #F7D23C;

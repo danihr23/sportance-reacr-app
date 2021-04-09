@@ -28,7 +28,7 @@ export default function PostDetails(props) {
                 //console.log(doc.data());
 
                 setData(doc.data());
-                setLike(doc.data().likes);
+                setLike(Number(doc.data().likes));
             })
             .catch(err=>console.log(err));
     }

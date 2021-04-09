@@ -11,7 +11,9 @@
       position: relative;
       top: 281px;
       border-radius: 10px;
-      margin: 0px 571px;
+      height: 176px;
+      width: 374px;
+      margin: auto;
   }
   .logIn img{
     width: 648px;
@@ -27,8 +29,8 @@
     left: 29px;
   }
   .field-logIn input{
-      height: 50px;
-      width: 358px;
+    height: 52px;
+    width: 341px;
       border: none;
       border-bottom: 2px solid gray;
       font-size: 15px;
@@ -38,8 +40,11 @@
       background-color: #F7D23C;
   }
   .btnLogIn{
-      width: 357px;
-      height: 42px;
+    position: relative;
+    left: 10px;
+    width: 336px;
+    border-radius: 8px;
+    height: 43px;
       margin-top: 10px;
       font-size: 15px;
       border: none;

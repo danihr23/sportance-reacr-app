@@ -27,7 +27,7 @@ const [user, setUser]= useContext(UserContext).user
         }
         setEmail(user.email)
     })
-    .catch(err=>console.log(err));
+    
 
   },[])
 
