@@ -9,7 +9,7 @@ Once you sign up for the app you can
  In addition, you have the option to create you own article. 
 You can also support articles written by like button!
 
-##How to run in local environment:
+## How to run in local environment:
 
 
 
