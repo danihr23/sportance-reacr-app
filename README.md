@@ -12,7 +12,8 @@ You can also support articles written by like button!
 ##How to run in local environment:
 
 
-install MongoDB from here https://www.mongodb.com/try/download/community
+
 natigate to backend/ -> npm i -> firebase.
 navigate to frontend/ -> npm i react -> npm run start
+Install material-ui.com -> npm install @matirial-ui/core
 Open http://localhost to view it in the browser.
