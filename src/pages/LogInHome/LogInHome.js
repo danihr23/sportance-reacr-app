@@ -64,7 +64,7 @@ export default function LogInHome() {
                         <p>NFL</p>
                     </div>
                     </Link>
-                    <Link to="/sponrance/other" style={{ textDecoration: 'none',color:'#35456D' }} >
+                    <Link to="/sponrance/Other" style={{ textDecoration: 'none',color:'#35456D' }} >
                     <div className="sport-two">
                         <p className='sport-icon'>
                             <SportsIcon />
