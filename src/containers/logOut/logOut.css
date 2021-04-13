@@ -6,3 +6,15 @@
   color: #F7D23C;
   padding: 10px;
 }
+@media all and (max-width: 600px) {
+  .btnLogOut {
+    margin: 22px 10px;
+    list-style: none;
+    border-radius: 3px;
+    background-color: #35456D;
+    color: #F7D23C;
+    padding: 8px;
+    max-height: 38px;
+    font-size: 11px;
+}
+}

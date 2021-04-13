@@ -30,3 +30,14 @@
     text-decoration: none;
 }
 
+@media all and (max-width: 600px) {
+    .home img {
+        max-width: 100%;
+        position: relative;
+        left: -2px;
+    }
+    .logo-text {
+        min-width: 100%;
+        padding-top: 150px;
+    }
+}

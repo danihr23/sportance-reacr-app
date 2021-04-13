@@ -39,3 +39,20 @@
 .sport-two{
     margin-left: -203px;
 }
+@media all and (max-width: 600px) {
+    .sport div {
+        width: 92px;
+        height: 59px;
+        text-align: center;
+        font-size: 17px;
+        padding: 11px;
+        background-color: #F7D23C;
+        border-radius: 4px;
+        box-shadow: 5px 10px 15px #888888;
+        padding-left: -10px;
+    }
+    .sport-two {
+        margin-left: 69px;
+    }
+  
+}

@@ -30,4 +30,29 @@
     margin: 16px;
 
 }
+@media all and (max-width: 600px) {
+    .logo {
+        width: 79px;
+    }
+    .navigation {
+        height: 63px;
+
+    }
+    .navigation ul li {
+        height: 31px;
+        margin: 23px 8px;
+        list-style: none;
+        border-radius: 3px;
+        background-color: #35456D;
+        color: #F7D23C;
+        padding: 2px;
+        font-size: 12px;
+    }
+    .welcome {
+        color: #F7D23C;
+        font-size: 11px;
+        margin: 21px auto;
+        padding-left: 46px;
+    }
+}
 

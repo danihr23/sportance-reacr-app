@@ -28,11 +28,11 @@ export default function CreatePostNav(props) {
 
 
     return (
-        <div className="navigation">
+        <div className="navigation-create">
         <Link to="/sportance/logInHome" style={{ textDecoration: 'none' }} >
-        <img src={Logo} alt="logo" className="logo" />
+        <img src={Logo} alt="logo" className="logo-create" />
         </Link>
-        <div className="welcome">
+        <div className="welcome-create">
         <p>Welcome {email} in SPORTANCE</p>
         </div>
 

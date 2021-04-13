@@ -1,4 +1,4 @@
-.navigation{
+.navigation-create{
     background-color:#0D1424;
     display: flex;
     justify-content: space-between;
@@ -6,17 +6,17 @@
     text-align: center;
     color: white;
 }
-.welcome{
+.welcome-create{
     color:#F7D23C;
     font-size: 36px;
     margin: 25px auto;
     padding-left:  107px;;
 }
-.navigation ul{
+.navigation-create ul{
     display: flex;
 
 }
-.navigation ul li{
+.navigation-create ul li{
     margin: 21px 10px;
     list-style: none;
     border-radius: 8px;
@@ -24,10 +24,51 @@
   color: #F7D23C;
   padding: 10px;
 }
-.logo{
+.logo-create{
     width: 133px;
     height: 47px;
     margin: 16px;
+
+}
+@media all and (max-width: 600px) {
+
+    .post-groups {
+        display: flex;
+        margin: 77px 0px;
+        flex-wrap: wrap;
+        width: auto;
+        box-sizing: border-box;
+        outline: none;
+        height: 100%;
+        overflow: hidden;
+    }
+    .post-groups li {
+        list-style: none;
+        margin: 2px 12px;
+        background: white;
+        max-height: 198px;
+        max-width: 162px;
+        padding: 15px;
+        border-radius: 7px;
+        box-shadow: 10px 11px 14px grey;
+    }
+    .post-img img {
+        display: inline-block;
+        /* min-width: 186px; */
+        /* min-height: 180px; */
+        width: 153px;
+        height: 97px;
+        margin: 0 0 0px 10px;
+    }
+    .post-description p {
+        font-size: 10px;
+    }
+    .button-info {
+        position: relative;
+        right: -53px;
+        top: -54px;
+        font-size: 8px;
+    }
 
 }
 
