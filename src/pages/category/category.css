@@ -118,3 +118,47 @@ body{
     background-color: #9A8833;
    
 }
+
+@media all and (max-width: 600px) {
+
+    .post-groups {
+        display: flex;
+        margin: 77px 0px;
+        flex-wrap: wrap;
+        width: auto;
+        box-sizing: border-box;
+        outline: none;
+        height: 100%;
+        overflow: hidden;
+    }
+    .post-groups li {
+        list-style: none;
+        margin: 2px 12px;
+        background: white;
+        max-height: 257px;
+        min-width: 126px;
+        height: 198px;
+        width: 126px;
+        padding: 15px;
+        border-radius: 7px;
+        box-shadow: 10px 11px 14px grey;
+    }
+    .post-img img {
+        display: inline-block;
+        min-width: 159px;
+        min-height: 116px;
+        width: 159px;
+        height: 116px;
+        margin: 0 0 0px 10px;
+    }
+    .post-description p {
+        font-size: 10px;
+    }
+    .button-info {
+        position: relative;
+        right: -53px;
+        top: -54px;
+        font-size: 8px;
+    }
+
+}

@@ -76,8 +76,7 @@ export default function CreatePost(props) {
     return (
         <div className="createPost">
 
-            <CreateNav/>
-               
+            <CreateNav/> 
 
         <section className="create" >
             <form  onSubmit={CreateCategorySubmit}>
