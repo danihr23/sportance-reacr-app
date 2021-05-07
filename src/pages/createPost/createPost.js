@@ -3,9 +3,10 @@ import { logDOM } from '@testing-library/dom';
 import React,{useContext,useState,useEffect} from 'react'
 import { useHistory } from 'react-router-dom';
 import CreateNav from '../../containers/CreatePostNav/createPostNav'
+import makeId from '../../containers/helper/helpId';
 import Nav from  '../../containers/LoginNav/nav'
 import { UserContext } from '../../context/user';
-import { db,auth } from '../../firebase';
+import { db,auth,storage } from '../../firebase';
 import './createPost.css';
 
 
@@ -16,7 +17,23 @@ export default function CreatePost(props) {
 
     const [error, setError] = useState(false)
 
+    const [image, setImage] = useState(null)
+
+    const [progress, setProgress] = useState(0)
+
     const history =useHistory();
+
+    const handlechange =(e)=>{ 
+        if(e.target.files[0]){
+            setImage(e.target.files[0]);
+
+            var selectedImageSrc = URL.createObjectURL(e.target.files[0]);
+
+            var imagePreview = document.getElementById("imageUploadPreview");
+            imagePreview.src =selectedImageSrc;
+            imagePreview.style.display='block';
+        }
+    };
 
     useEffect(()=>{
 
@@ -41,11 +58,25 @@ export default function CreatePost(props) {
         const category = e.target.category.value;
         const title = e.target.title.value;
         const description = e.target.description.value;
-        const imageURL = e.target.imageURL.value;
-
         
-            if(category!='' && title!=''&& description!='' && imageURL!='' ){
-                db.
+        
+            if(category!='' && title!=''&& description!=''  ){
+                
+                var imageName = makeId(10);
+
+                const uploadTask = storage.ref(`images/${imageName}.jpg`).put(image); 
+                
+                uploadTask.on("state_changes", (snapshot)=>{
+
+                    const progres = Math.random((snapshot.bytesTransferred/snapshot.totalBytes)*100)
+
+                    setProgress(progres);
+                },(error) =>{
+                    console.log(error);
+                },()=>{
+                    storage.ref("images").child(`${imageName}.jpg`).getDownloadURL()
+                    .then((imageURL)=>{
+                        db.
                 collection(category).add({
                     title,
                     description,
@@ -61,6 +92,11 @@ export default function CreatePost(props) {
         
                 console.log(category);
                 history.push('/sportance/logInHome')
+
+                    })
+                })
+                
+                
               
             }
             else{
@@ -97,11 +133,13 @@ export default function CreatePost(props) {
                         </span>
                     </p>
                     <p className="field-create">
-                        <label className="label" htmlFor="image">Image</label>
-                        <span className="input">
-                            <input type="text" name="imageURL" id="image" placeholder="Image" />
-                            
-                        </span>
+                        <label className="label" htmlFor="image">Choose Image</label>
+                        <span className="input-upload">
+                            <input type="file"  accept="image/*" id="image" onChange={handlechange} />
+                            <div className="image-preview">
+                                <img  id="imageUploadPreview" alt="" />
+                            </div>
+                            </span>
                     </p>
                     <p className="field-create">
                         <label  className="label" htmlFor="category">Category</label>

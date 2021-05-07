@@ -1,8 +1,9 @@
 import React,{useState,useEffect} from 'react'
 import './editPost.css'
 import Nav from '../../containers/LoginNav/nav'
-import { auth, db } from '../../firebase';
+import { auth, db,storage } from '../../firebase';
 import { useHistory } from 'react-router-dom';
+import makeId from '../../containers/helper/helpId';
 
 export default function EditPost(props) {
 
@@ -12,7 +13,8 @@ export default function EditPost(props) {
     const [data, setData] = useState([])
     const [error, setError] = useState(false)
    
-
+    const [image, setImage] = useState(null)
+    const [progress, setProgress] = useState(0)
     
     const history =useHistory();
 
@@ -25,8 +27,24 @@ export default function EditPost(props) {
                 setData(doc.data());
           })
     }
+    const onChangeUpload = (e)=>{
+        if(e.target.files[0]){
+            setImage(e.target.files[0]);
+
+        var selectedImageSrc = URL.createObjectURL(e.target.files[0]);
+
+        var imagePreview = document.getElementById("imageURLEdit");
+        imagePreview.src =
+        selectedImageSrc;
+        imagePreview.style.display='block';
+        }
+    }
     const OnChangeSubmit=(e)=>{
-        setData({...data, [e.target.name]:e.target.value})
+       
+            
+            setData({...data, [e.target.name]:e.target.value})
+        
+        
     }
     
 
@@ -35,14 +53,34 @@ export default function EditPost(props) {
 
         const title = e.target.title.value;
         const description = data.description
-        const imageURL = data.imageURL
-        console.log(title)
+        const likes = data.likes;
+        const userId = data.userId;
+        console.log(data)
 
         
-            if(category!='' && title!=''&& description!='' && imageURL!='' ){
-                db.
+            if(category!='' && title!=''&& description!=''  ){
+
+
+
+
+                var imageName = makeId(10);
+
+                const uploadTask = storage.ref(`images/${imageName}.jpg`).put(image); 
+                
+                uploadTask.on("state_changes", (snapshot)=>{
+
+                    const progres = Math.random((snapshot.bytesTransferred/snapshot.totalBytes)*100)
+
+                    setProgress(progres);
+                },(error) =>{
+                    console.log(error);
+                },()=>{
+                    storage.ref("images").child(`${imageName}.jpg`).getDownloadURL()
+                    .then((imageURL)=>{
+                        db.
                 collection(category).doc(idPost).set({
-                    ...data,
+                    likes,
+                    userId,
                     title,
                     description,
                     imageURL,
@@ -56,6 +94,10 @@ export default function EditPost(props) {
         
                 console.log(category);
                 history.push('/sportance/logInHome')
+
+                    })
+                })
+                
               
             }
             else{
@@ -104,10 +146,12 @@ export default function EditPost(props) {
                     </span>
                 </p>
                 <p className="field-edit">
-                    <label className="label-edit" htmlFor="image">Image</label>
-                    <span className="input-edit">
-                        <input type="text" name="imageURL" id="imageURL" value={data.imageURL} onChange={OnChangeSubmit} />
-                        
+                    <label className="label-edit" htmlFor="image"> Choose Image</label>
+                    <span className="input-edit-upload">
+                        <input type="file"  accept="image/*"  onChange={onChangeUpload} />
+                        <div>
+                            <img   id="imageURLEdit" src={data.imageURL} />
+                        </div>
                     </span>
                 </p>
                 <p className="field-edit">

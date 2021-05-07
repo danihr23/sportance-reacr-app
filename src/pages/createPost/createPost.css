@@ -24,9 +24,7 @@
     display: flex;
     flex-direction: column;
 }
-.field-create{
-    display: flex;
-}
+
 .input input{
     width: 283px;
     height: 34px;
@@ -83,6 +81,7 @@
     }
     .field-create {
         margin: 12px;
+        
     }
     .label {
         font-size: 15px;
@@ -96,4 +95,14 @@
         width: 100%;
         height: 100%;
     }
+}
+
+#imageUploadPreview{
+    display: none;
+    height: 135px;
+   
+}
+.input-upload{
+    background-color:#35456D ;
+   justify-content: center;
 }

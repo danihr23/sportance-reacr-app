@@ -24,7 +24,7 @@ export default function LogInHome() {
                         <p className='sport-icon' >
                             <SportsBasketballIcon />
                         </p>
-                        <p>Basketboll</p>
+                        <p>Basketball</p>
                     </div>
                     </Link>
                    
