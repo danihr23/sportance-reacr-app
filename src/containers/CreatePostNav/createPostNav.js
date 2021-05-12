@@ -33,7 +33,7 @@ export default function CreatePostNav(props) {
         <img src={Logo} alt="logo" className="logo-create" />
         </Link>
         <div className="welcome-create">
-        <p>Welcome {email} in SPORTANCE</p>
+        <p>Welcome {email} </p>
         </div>
 
         <article>

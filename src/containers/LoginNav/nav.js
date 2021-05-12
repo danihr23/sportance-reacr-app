@@ -41,7 +41,7 @@ const [user, setUser]= useContext(UserContext).user
         <img src={Logo} alt="logo" className="logo" />
         </Link>
         <div className="welcome">
-        <p>Welcome {email} in SPORTANCE</p>
+        <p>Welcome {email} </p>
         </div>
 
         <article>

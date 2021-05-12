@@ -30,6 +30,8 @@ export default function LogIn({props,history}) {
             .then(res=>{
 
                 const currUser = res.user;
+                const {user:{uid, email}}=res;
+                localStorage.setItem('user',JSON.stringify({ uid,email}))
                 if(currUser){
                     history.push('/sportance/logInHome')
                    }

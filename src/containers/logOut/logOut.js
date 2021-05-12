@@ -13,6 +13,7 @@ export default function LogOut() {
 
         const LogOutSubmit= ()=>{
             auth.signOut().then(()=>{
+                localStorage.removeItem('user');
                 setUser('');
               history.push('/')
              
