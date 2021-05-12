@@ -12,10 +12,12 @@ import LogOut from './containers/logOut/logOut'
 import PostDetails from './pages/postDetails/postDetails' 
 import EditPost from './pages/editPost/editPost'
 import Delete from './containers/deletePost/deletePost'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 function App() {
   return (
   <UserContextProvider>
     <div className="App">
+      <ScrollToTop />
       <Switch>
       <Route path="/" exact component={Home} />
       <Route path= "/sportance/logIn" component={LogIn} />
