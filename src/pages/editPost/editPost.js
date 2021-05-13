@@ -15,6 +15,7 @@ export default function EditPost(props) {
    
     const [image, setImage] = useState(null)
     const [progress, setProgress] = useState(0)
+    const [click, setClick] = useState(false)
     
     const history =useHistory();
 
@@ -26,6 +27,10 @@ export default function EditPost(props) {
 
                 setData(doc.data());
           })
+    }
+
+    const onClickFnc=()=>{
+        setClick(true)
     }
     const onChangeUpload = (e)=>{
         if(e.target.files[0]){
@@ -61,42 +66,62 @@ export default function EditPost(props) {
             if(category!='' && title!=''&& description!=''  ){
 
 
-
-
-                var imageName = makeId(10);
-
-                const uploadTask = storage.ref(`images/${imageName}.jpg`).put(image); 
-                
-                uploadTask.on("state_changes", (snapshot)=>{
-
-                    const progres = Math.random((snapshot.bytesTransferred/snapshot.totalBytes)*100)
-
-                    setProgress(progres);
-                },(error) =>{
-                    console.log(error);
-                },()=>{
-                    storage.ref("images").child(`${imageName}.jpg`).getDownloadURL()
-                    .then((imageURL)=>{
-                        db.
-                collection(category).doc(idPost).set({
-                    likes,
-                    userId,
-                    title,
-                    description,
-                    imageURL,
+                if(click==true){
+                    var imageName = makeId(10);
+    
+                    const uploadTask = storage.ref(`images/${imageName}.jpg`).put(image); 
                     
-                })
-                .then(res=>{
-                    //console.log(res.id);
-                })
-                .catch(err=>console.log(err));
-              
-        
-                console.log(category);
-                history.push('/sportance/logInHome')
-
+                    uploadTask.on("state_changes", (snapshot)=>{
+    
+                        const progres = Math.random((snapshot.bytesTransferred/snapshot.totalBytes)*100)
+    
+                        setProgress(progres);
+                    },(error) =>{
+                        console.log(error);
+                    },()=>{
+                        storage.ref("images").child(`${imageName}.jpg`).getDownloadURL()
+                        .then((imageURL)=>{
+                            db.
+                    collection(category).doc(idPost).set({
+                        likes,
+                        userId,
+                        title,
+                        description,
+                        imageURL,
+                        
                     })
-                })
+                    .then(res=>{
+                        //console.log(res.id);
+                    })
+                    .catch(err=>console.log(err));
+                  
+            
+                    console.log(category);
+                    history.push('/sportance/logInHome')
+    
+                        })
+                    })
+                }
+                else{
+
+
+                    db.
+                    collection(category).doc(idPost).set({
+                        ...data,
+                        
+                      
+                        title,
+                        description,
+                       
+                        
+                    })
+                    .then(res=>{
+                        history.push('/sportance/logInHome')
+                    })
+                    .catch(err=>console.log(err));
+
+                }
+
                 
               
             }
@@ -148,7 +173,7 @@ export default function EditPost(props) {
                 <p className="field-edit">
                     <label className="label-edit" htmlFor="image"> Choose Image</label>
                     <span className="input-edit-upload">
-                        <input type="file"  accept="image/*"  onChange={onChangeUpload} />
+                        <input type="file" name='imageURl' accept="image/*" onClick={onClickFnc} onChange={click==true ? onChangeUpload : OnChangeSubmit} />
                         <div>
                             <img   id="imageURLEdit" src={data.imageURL} />
                         </div>
