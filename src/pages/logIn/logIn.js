@@ -76,7 +76,7 @@ export default function LogIn({props,history}) {
                     <EmailIcon/>
                     </p>
                     
-                    <input type="email" id="email" name="email" placeholder="write your email" />
+                    <input type="email" id="email" name="email" placeholder="email" />
 
                 </div>
                 <div className="field-logIn">
@@ -84,7 +84,7 @@ export default function LogIn({props,history}) {
                     <LockOpenIcon/>
                     </p>
                     
-                    <input type="password" id="password" name="password" placeholder="write your password" />
+                    <input type="password" id="password" name="password" placeholder="password" />
                 </div>
 
                 <button className="btnLogIn" type="submit"> Sign In</button>
