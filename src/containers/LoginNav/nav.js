@@ -52,7 +52,7 @@ const [user, setUser]= useContext(UserContext).user
                     </Link>    
                 </li>
                 <li>
-                    <p>My Profile</p>
+                    <Link to='/sportance/myProfile' style={{textDecoration: 'none', color:'#F7D23C' }}>My Profile</Link>
                 </li>
                
                 

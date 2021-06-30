@@ -7,8 +7,9 @@ import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import Nav from '../../containers/LoginNav/nav'
 export default function Categoty(props) {
 
+    //console.log(props);
     const category = props.match.params.category;
-    console.log(category);
+    //console.log(category);
 
 
     const [dataStor, setDataStor] = useState([]);
@@ -17,7 +18,7 @@ export default function Categoty(props) {
         db.collection(category).get()
             .then((data) => {
                  data.docs.map(doc =>  dataInfo.push({id:doc.id, info:doc.data()}));
-                //console.log(dataInfo);
+                console.log(dataInfo);
                 setDataStor(dataInfo)
             })
             .catch(err=>console.log(err));
@@ -27,7 +28,7 @@ export default function Categoty(props) {
         fetchData();
     }, [])
 
-    console.log(dataStor)
+    //console.log(dataStor)
 
 
 
