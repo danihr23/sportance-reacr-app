@@ -7,7 +7,7 @@ import { db } from '../../firebase';
 const infoArr = [];
 export default function MyProfile(params) {
 
-    
+ 
 
     let user = JSON.parse(localStorage.getItem('user'));
     const currUserId = user.uid;
@@ -18,25 +18,7 @@ export default function MyProfile(params) {
 
     
     let category =["basketball","tennis","football",]
-//     const fetchData = () => {
 
-//         for (let index = 0; index < category.length; index++) {
-            
-//             let currCategory = category[index];
-            
-        
-//         db.collection(currCategory).get()
-//             .then((data) => {
-//                  data.docs.map(doc =>  
-  
-                    
-//                     dataInfo.push({id:doc.id, info:doc.data()}));
-                
-//                 setDataStor(dataInfo)
-//             })
-//             .catch(err=>console.log(err));
-//     }
-// }
     useEffect(() => {
         for (let index = 0; index < category.length; index++) {
             
@@ -49,7 +31,11 @@ export default function MyProfile(params) {
               
                                 
                                 dataInfo.push({id:doc.id, info:doc.data()}));
+                                infoArr.length=0;
                                 if(index== category.length-1){
+                               
+                                    
+                                    
                                     dataInfo.forEach(res =>{
 
                                         // console.log(res);
@@ -77,19 +63,6 @@ export default function MyProfile(params) {
                 
     }, [])
 
-    
-
-    // dataStor.forEach(res =>{
-
-    //     //console.log(res);
-       
-    //      if(res.info.userId == currUserId){
-    //        // console.log(res);
-    //        infoArr.push(res)  
-    //      }
-    // })
-
-    
     console.log(infoArr.length);
 
 
