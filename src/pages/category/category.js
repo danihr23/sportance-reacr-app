@@ -9,7 +9,7 @@ export default function Categoty(props) {
 
     //console.log(props);
     const category = props.match.params.category;
-    //console.log(category);
+    console.log(category);
 
 
     const [dataStor, setDataStor] = useState([]);
@@ -17,7 +17,10 @@ export default function Categoty(props) {
     const fetchData = () => {
         db.collection(category).get()
             .then((data) => {
-                 data.docs.map(doc =>  dataInfo.push({id:doc.id, info:doc.data()}));
+                 data.docs.map(doc =>  
+  
+                    
+                    dataInfo.push({id:doc.id, info:doc.data()}));
                 console.log(dataInfo);
                 setDataStor(dataInfo)
             })
