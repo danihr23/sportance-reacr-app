@@ -2,7 +2,7 @@ import React,{useEffect, useState,useContext} from 'react'
 import { Link } from 'react-router-dom'
 import { UserContext } from '../../context/user'
 import Logo from './logo-text.png';
-import './createPostNav.css'
+
 import { auth } from '../../firebase';
 import LogOut from '../logOut/logOut'
 
@@ -40,7 +40,9 @@ export default function CreatePostNav(props) {
             <ul>
                
                 <li>
-                <Link to='/sportance/myProfile' style={{textDecoration: 'none', color:'#F7D23C' }}>My Profile</Link>
+                <Link to='/sportance/createPost' style={{ textDecoration: 'none',color:'#F7D23C' }}>
+                    Create Post
+                    </Link>   
                 </li>
                
                 

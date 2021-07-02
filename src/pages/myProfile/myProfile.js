@@ -1,5 +1,5 @@
 
-import Nav from '../../containers/CreatePostNav/createPostNav'
+import MyProfileNav from '../../containers/MyProfileNav/myProfileNav'
 import React, { useEffect, useState } from 'react'
 import { db } from '../../firebase';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
@@ -72,7 +72,7 @@ export default function MyProfile(params) {
     
     return (
         <div>
-            <Nav />
+           <MyProfileNav/>
 
             {/* <h1> Welcome {user.email} </h1> */}
 
