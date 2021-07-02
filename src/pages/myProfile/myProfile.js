@@ -2,6 +2,9 @@
 import Nav from '../../containers/CreatePostNav/createPostNav'
 import React, { useEffect, useState } from 'react'
 import { db } from '../../firebase';
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import { Link, NavLink } from 'react-router-dom';
+import './myProfile.css'
 
 
 const infoArr = [];
@@ -17,7 +20,7 @@ export default function MyProfile(params) {
     const dataInfo= [{id:'',info:''}];
 
     
-    let category =["basketball","tennis","football",]
+    let category =["basketball","tennis","football","NFL","volleyball","Other"]
 
     useEffect(() => {
         for (let index = 0; index < category.length; index++) {
@@ -63,7 +66,7 @@ export default function MyProfile(params) {
                 
     }, [])
 
-    console.log(infoArr.length);
+    console.log(infoArr);
 
 
     
@@ -71,7 +74,50 @@ export default function MyProfile(params) {
         <div>
             <Nav />
 
-            <h1> Welcome {user.email} </h1>
+            {/* <h1> Welcome {user.email} </h1> */}
+
+            <h1 className="myProfile-title"> My Posts</h1>
+
+            <ul className="myProfile-groups">
+                { infoArr.map(x => {
+
+                    if(x.id !=''){
+                    return (
+
+                        <li className="otherPet" key={x.id}> 
+                         
+                     <article className="myProfile-info-post">
+                            <p className="myProfile-img"><img src={x.info.imageURL} /></p>
+                            
+                            
+                                
+                                <div className="myProfile-post-description">
+                                <p>{x.info.title}</p>
+                                
+                                </div>
+                                <div className="buttons-wrap">
+                                
+                                <div className="myProfile-likes">
+                 
+                                <p><ThumbUpIcon/></p>
+                                <p>{x.info.likes}</p>
+                                
+                                </div>
+                                
+                                <Link to={`/details/${x.info.category}/${x.id}`}><button className="myProfile-button-info">read more</button></Link>
+                                </div>
+                               
+                                
+                            </article>
+                           
+                        </li>
+
+
+                    )
+                    }
+                })}
+            
+            </ul>
         </div>
 
 

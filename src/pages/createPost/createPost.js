@@ -82,7 +82,8 @@ export default function CreatePost(props) {
                     description,
                     imageURL,
                     userId,
-                    likes:'0'
+                    likes:'0',
+                    category
                 })
                 .then(res=>{
                     console.log(res.id);

@@ -1,0 +1,164 @@
+.myProfile-groups{
+    display: flex;
+    margin: 120px 180px;
+    flex-wrap: wrap;
+    
+    width: auto;
+    box-sizing: border-box;
+   
+    outline: none;
+    height: 100%;
+
+    
+ 
+    
+}
+
+.myProfile-title{
+    text-align: center;
+    color:  #9A8833;
+    margin: 60px;
+    font-size: 52px;
+}
+.myProfile-img img{
+    display: inline-block;
+    min-width: 200px;
+    min-height: 180px;
+    width: 200px;
+    height: 180px;
+    margin: 0 0 0px 10px;
+  
+}
+
+.myProfile-info-post{
+
+    display: flex;
+    position: relative;
+    width: auto;
+    box-sizing: border-box;
+    flex-direction: column;
+    outline: none;
+    height: 100%;
+    overflow: hidden;
+}
+.posts{
+    text-align: center;
+    
+    height: 100vh;
+}
+.myProfile-groups li{
+    list-style: none;
+    margin: 10px 30px;
+    background: white;
+    max-height: 278px;
+    min-width: 214px;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 10px 11px 14px grey;
+    
+}
+.myProfile-post-description{
+    display: flex;
+    max-width: 220px;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    background-color:white
+}
+.myProfile-post-description p{
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+   
+}
+
+.myProfile-button-info{
+    line-height: 1;
+    cursor: pointer;
+    font-family: inherit;
+    box-sizing: border-box;
+    max-width: 334px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.1s ease-in-out;
+    font-size: 11px;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    min-width: 32px;
+    padding: 0 8px;
+    height: 23px;
+    color: #2B2B2B;
+    fill: #2B2B2B;
+    background: white;
+    position: relative;
+    right: -77px;
+    top: -54px;
+    
+   
+    
+}
+.myProfile-likes{
+    display: flex;
+   
+}
+.myProfile-likes p{
+    margin: 8px;
+}
+.button-like{
+    border: none;
+    position: relative;
+    top: 7px;
+    width: 50px;
+    padding: 4px;
+    border-radius: 4px;
+    background-color: #9A8833;
+   
+}
+
+@media all and (max-width: 600px) {
+
+    .myProfile-groups {
+        display: flex;
+        margin: 77px 0px;
+        flex-wrap: wrap;
+        width: auto;
+        box-sizing: border-box;
+        outline: none;
+        height: 100%;
+       
+    }
+    .myProfile-groups li {
+        list-style: none;
+        margin: 2px 12px;
+        background: white;
+        max-height: 257px;
+        min-width: 126px;
+        height: 198px;
+        width: 126px;
+        padding: 15px;
+        border-radius: 7px;
+        box-shadow: 10px 11px 14px grey;
+    }
+    .myProfile-img img {
+        display: inline-block;
+        min-width: 159px;
+        min-height: 116px;
+        width: 159px;
+        height: 116px;
+        margin: 0 0 0px 10px;
+    }
+    .myProfile-post-description p {
+        font-size: 10px;
+    }
+    .myProfile-button-info {
+        position: relative;
+        right: -53px;
+        top: -54px;
+        font-size: 8px;
+    }
+
+}
