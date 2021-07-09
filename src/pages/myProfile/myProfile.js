@@ -11,18 +11,19 @@ const infoArr = [];
 export default function MyProfile(params) {
 
  
-
+   
     let user = JSON.parse(localStorage.getItem('user'));
     const currUserId = user.uid;
     console.log(user.uid)
     
     const [dataStor, setDataStor] = useState([]);
     const dataInfo= [{id:'',info:''}];
-
+    
     
     let category =["basketball","tennis","football","NFL","volleyball","Other"]
 
     useEffect(() => {
+        setDataStor(infoArr)
         for (let index = 0; index < category.length; index++) {
             
                         var currCategory = category[index];
@@ -48,6 +49,7 @@ export default function MyProfile(params) {
                                               //setDataStor(res)  
     
                                               infoArr.push(res)
+                                              
                                           }
                                      }) 
                                 }
@@ -62,11 +64,11 @@ export default function MyProfile(params) {
 
              
                 
-
+                setDataStor(infoArr)
                 
     }, [])
-
-    console.log(infoArr);
+    
+    console.log(dataStor.length);
 
 
     
@@ -79,7 +81,7 @@ export default function MyProfile(params) {
             <h1 className="myProfile-title"> My Posts</h1>
 
             <ul className="myProfile-groups">
-                { infoArr.map(x => {
+                { dataStor.map(x => {
 
                     if(x.id !=''){
                     return (
